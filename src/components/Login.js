@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,7 +25,7 @@ const Login = () => {
       );
       const token = response.data.token;
       localStorage.setItem("token", token);
-      navigate("/notes");
+      window.location.href = "/notes";
     } catch (error) {
       setError(error);
       setFormData({
