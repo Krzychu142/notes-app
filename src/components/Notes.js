@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Notes(props) {
@@ -8,7 +8,7 @@ function Notes(props) {
 
   useEffect(() => {
     if (props.isMyTokenExpired) {
-      navigate("/login");
+      navigate("/");
     } else {
       axios
         .get("http://localhost:3001/notes", {
@@ -29,6 +29,9 @@ function Notes(props) {
   return (
     <>
       <header>
+        <nav>
+          <Link to="/">Home</Link>
+        </nav>
         <button onClick={() => props.logOut()}>LogOut</button>
       </header>
       <main>

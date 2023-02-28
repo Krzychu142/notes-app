@@ -20,7 +20,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home setToken={setToken} />}></Route>
+          <Route
+            exact
+            path="/"
+            element={<Home isMyTokenExpired={isMyTokenExpired} />}
+          ></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
           <Route

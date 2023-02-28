@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -37,6 +38,15 @@ const Login = () => {
 
   return (
     <>
+      <nav>
+        <a href={() => false}>
+          <Link to="/">Back to home</Link>
+        </a>
+        <a href={() => false}>
+          Don't have account already?
+          <Link to="/register">Go to register</Link>
+        </a>
+      </nav>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
