@@ -1,9 +1,15 @@
+import Note from "./Note";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Notes(props) {
   const [notes, setNotes] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [newNote, setNewNote] = useState({
+    title: "title of your note",
+    content: "content of your note",
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +23,6 @@ function Notes(props) {
           },
         })
         .then((response) => {
-          console.log(response);
           setNotes(response.data);
         })
         .catch((error) => {
@@ -26,20 +31,43 @@ function Notes(props) {
     }
   }, [props.isMyTokenExpired, props.token, navigate]);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/name", {
+        headers: {
+          Authorization: `Bearer ${props.token}`,
+        },
+      })
+      .then((response) => {
+        setUsername(response.data.name);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [props.token]);
+
   return (
     <>
       <header>
+        <h2>Hello {username}</h2>
         <nav>
           <Link to="/">Home</Link>
         </nav>
         <button onClick={() => props.logOut()}>LogOut</button>
       </header>
       <main>
+        <textarea></textarea>
+        <textarea></textarea>
+        <button>save new note</button>
         {notes.map((note) => (
-          <div key={note.noteId}>
-            <h2>title</h2>
-            <p>{note.content}</p>
-          </div>
+          <Note
+            key={note.noteId}
+            noteId={note.noteId}
+            title={note.title}
+            content={note.content}
+            setNotes={setNotes}
+            token={props.token}
+          />
         ))}
       </main>
     </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,7 @@ const Login = () => {
         "http://localhost:3001/login",
         formData
       );
+      console.log(response);
       const token = response.data.token;
       localStorage.setItem("token", token);
       window.location.href = "/notes";
