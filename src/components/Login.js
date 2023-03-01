@@ -24,7 +24,6 @@ const Login = () => {
         "http://localhost:3001/login",
         formData
       );
-      console.log(response);
       const token = response.data.token;
       localStorage.setItem("token", token);
       window.location.href = "/notes";
@@ -65,6 +64,7 @@ const Login = () => {
           value={formData.password}
           onChange={handleChange}
         />
+        {/* @todo add CAPTCHA here */}
         <button type="submit">Login</button>
       </form>
       {error && <p>Something went wrong. Pleas try again.</p>}

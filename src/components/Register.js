@@ -77,6 +77,7 @@ const Register = () => {
           value={formData.password}
           onChange={handleChange}
         />
+        {/* @todo add CAPTCHA here */}
         <button type="submit">Register</button>
       </form>
       {responseCode !== null && (
