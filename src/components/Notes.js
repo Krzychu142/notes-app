@@ -81,13 +81,17 @@ function Notes(props) {
   };
 
   return (
-    <>
+    <div className="notes--container">
       <header>
-        <h2>Hello {username}</h2>
+        <h2>
+          Hello <span>{username}</span>
+        </h2>
         <nav>
-          <Link to="/">Home</Link>
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <button onClick={() => props.logOut()}>LogOut</button>
         </nav>
-        <button onClick={() => props.logOut()}>LogOut</button>
       </header>
       <main>
         <div>
@@ -115,7 +119,7 @@ function Notes(props) {
           />
         ))}
       </main>
-    </>
+    </div>
   );
 }
 

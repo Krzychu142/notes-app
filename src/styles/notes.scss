@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+.notes--container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    header {
+        span{
+            color: $main-color;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        nav {
+            padding: 10px;
+            button {
+                margin-left: 10px;
+            }
+        }     
+        @media screen and (min-width: 768px) {
+            nav {
+                margin-right: 40px;
+            }
+        }
+    }
+    
+}
