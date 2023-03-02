@@ -37,19 +37,23 @@ const Login = () => {
   };
 
   return (
-    <>
-      <nav>
+    <main className="login">
+      <nav className="login--nav">
         <ul>
           <li>
-            <Link to="/">Back to home</Link>
+            <Link className="link login--nav--link" to="/">
+              Back to home
+            </Link>
           </li>
           <li>
             Don't have account already?
-            <Link to="/register">Go to register</Link>
+            <Link className="link login--nav--link ml" to="/register">
+              Go to register
+            </Link>
           </li>
         </ul>
       </nav>
-      <form onSubmit={handleSubmit}>
+      <form className="login--form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -70,7 +74,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       {error && <p>Something went wrong. Pleas try again.</p>}
-    </>
+    </main>
   );
 };
 

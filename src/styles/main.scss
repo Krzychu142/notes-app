@@ -1,5 +1,6 @@
 @import './home.scss';
 @import './variables.scss';
+@import './login.scss';
 
 * {
     box-sizing: border-box;
@@ -7,6 +8,7 @@
 
 body {
     margin: 0;
+    background-color: $darker-gray;
 }
 
 html {
@@ -46,4 +48,19 @@ button:hover {
 
 .link:hover{
     color: $darker-main-color;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+    
+@media screen and (min-width: 768px) {
+    input {
+        width: 500px;
+    }
 }
