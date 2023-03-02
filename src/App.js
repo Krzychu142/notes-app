@@ -6,6 +6,8 @@ import Notes from "./components/Notes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { isExpired } from "react-jwt";
 
+import "./styles/main.scss";
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [isMyTokenExpired, setIsMyTokenExpired] = useState(isExpired(token));

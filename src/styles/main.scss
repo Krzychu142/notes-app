@@ -1,0 +1,49 @@
+@import './home.scss';
+@import './variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style: none;
+    transform: translateX(-1em);
+}
+
+li {
+    list-style: none;
+    transform: translateX(-1em);
+}
+
+button {
+    background-color: $main-color;
+    width: 80px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: $darker-main-color;
+}
+
+.link {
+    text-decoration: none;
+    color: $main-color;
+    transition-duration: 0.4s;
+}
+
+.link:hover{
+    color: $darker-main-color;
+}

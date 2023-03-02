@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+.home { 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $darker-gray;
+    span {
+        color: $darker-main-color;
+    }
+    .home--square{
+        padding: 20px;
+        border: 2px solid $darker-main-color;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+    }
+    .home--logout{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

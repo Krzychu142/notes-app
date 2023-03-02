@@ -90,16 +90,19 @@ function Notes(props) {
         <button onClick={() => props.logOut()}>LogOut</button>
       </header>
       <main>
-        <textarea
-          name="title"
-          value={newNote.title}
-          onChange={(event) => handleNewNoteChange(event)}
-        ></textarea>
-        <textarea
-          name="content"
-          value={newNote.content}
-          onChange={(event) => handleNewNoteChange(event)}
-        ></textarea>
+        <div>
+          <h3>create new note and save it</h3>
+          <textarea
+            name="title"
+            value={newNote.title}
+            onChange={(event) => handleNewNoteChange(event)}
+          ></textarea>
+          <textarea
+            name="content"
+            value={newNote.content}
+            onChange={(event) => handleNewNoteChange(event)}
+          ></textarea>
+        </div>
         <button onClick={handleSaveNewNote}>save new note</button>
         {notes.map((note) => (
           <Note
