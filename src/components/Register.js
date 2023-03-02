@@ -42,19 +42,23 @@ const Register = () => {
   };
 
   return (
-    <>
-      <nav>
+    <main className="login">
+      <nav className="login--nav">
         <ul>
           <li>
-            <Link to="/">Back to home</Link>
+            <Link className="link login--nav--link" to="/">
+              Back to home
+            </Link>
           </li>
           <li>
             Already have account?
-            <Link to="/login">Go to login</Link>
+            <Link className="link login--nav--link ml" to="/login">
+              Go to login
+            </Link>
           </li>
         </ul>
       </nav>
-      <form onSubmit={handleSubmit}>
+      <form className="login--form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -79,22 +83,27 @@ const Register = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        {/* @todo add CAPTCHA here */}
+        {/* @todo add CAPTCHA here */}{" "}
+        {responseCode !== null && (
+          <div>
+            {responseCode === 200 ? (
+              <p className="login__wrong">
+                Successfully registered. Now You can
+                <Link className="link login--nav--link ml" to="/login">
+                  log in
+                </Link>
+                .
+              </p>
+            ) : (
+              <p className="login__wrong">
+                Something went wrong. Pleas try again.
+              </p>
+            )}
+          </div>
+        )}
         <button type="submit">Register</button>
       </form>
-      {responseCode !== null && (
-        <div>
-          {responseCode === 200 ? (
-            <p>
-              Successfully registered. Now You can{" "}
-              <Link to="/login">log in</Link>.
-            </p>
-          ) : (
-            <p>Something went wrong. Pleas try again.</p>
-          )}
-        </div>
-      )}
-    </>
+    </main>
   );
 };
 

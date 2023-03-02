@@ -70,10 +70,12 @@ const Login = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        {/* @todo add CAPTCHA here */}
+        {/* @todo add CAPTCHA here */}{" "}
+        {error && (
+          <p className="login__wrong">Something went wrong. Pleas try again.</p>
+        )}
         <button type="submit">Login</button>
       </form>
-      {error && <p>Something went wrong. Pleas try again.</p>}
     </main>
   );
 };
