@@ -44,13 +44,15 @@ const Register = () => {
   return (
     <>
       <nav>
-        <a href={() => false}>
-          <Link to="/">Back to home</Link>
-        </a>
-        <a href={() => false}>
-          Already have account?
-          <Link to="/login">Go to login</Link>
-        </a>
+        <ul>
+          <li>
+            <Link to="/">Back to home</Link>
+          </li>
+          <li>
+            Already have account?
+            <Link to="/login">Go to login</Link>
+          </li>
+        </ul>
       </nav>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>

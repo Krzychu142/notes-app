@@ -39,13 +39,15 @@ const Login = () => {
   return (
     <>
       <nav>
-        <a href={() => false}>
-          <Link to="/">Back to home</Link>
-        </a>
-        <a href={() => false}>
-          Don't have account already?
-          <Link to="/register">Go to register</Link>
-        </a>
+        <ul>
+          <li>
+            <Link to="/">Back to home</Link>
+          </li>
+          <li>
+            Don't have account already?
+            <Link to="/register">Go to register</Link>
+          </li>
+        </ul>
       </nav>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>

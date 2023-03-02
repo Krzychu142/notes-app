@@ -23,7 +23,9 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Home isMyTokenExpired={isMyTokenExpired} />}
+            element={
+              <Home isMyTokenExpired={isMyTokenExpired} logOut={logOut} />
+            }
           ></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
