@@ -53,7 +53,9 @@ function Note(props) {
           : `${props.content.slice(0, maxTextLength)}...`}
       </p>
       {props.content.length >= maxTextLength && (
-        <button onClick={handleToggleText}>show more</button>
+        <button onClick={handleToggleText}>
+          {isFullTextVisible ? "show less" : "show more"}
+        </button>
       )}
       <button onClick={() => setIsEditFieldVisible((prev) => !prev)}>
         edit

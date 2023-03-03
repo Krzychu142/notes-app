@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Register = () => {
+  const [isVerified, setIsVerified] = useState(false);
   const [responseCode, setResponseCode] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
+
+  const handleRecaptcha = (value) => {
+    setIsVerified(true);
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -20,6 +26,9 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!isVerified) {
+      alert("Please verify that you're not a robot.");
+    }
     try {
       const response = await axios.post(
         "http://localhost:3001/register",
@@ -83,7 +92,6 @@ const Register = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        {/* @todo add CAPTCHA here */}{" "}
         {responseCode !== null && (
           <div>
             {responseCode === 200 ? (
@@ -101,7 +109,14 @@ const Register = () => {
             )}
           </div>
         )}
-        <button type="submit">register</button>
+        <ReCAPTCHA
+          style={{ marginBottom: "10px" }}
+          sitekey={process.env.REACT_APP_TEST_CAPTHA_SITE_KEY}
+          onChange={handleRecaptcha}
+        />
+        <button type="submit" disabled={!isVerified}>
+          register
+        </button>
       </form>
     </main>
   );

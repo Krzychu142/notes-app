@@ -19,32 +19,28 @@ function App() {
   }
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Home isMyTokenExpired={isMyTokenExpired} logOut={logOut} />
-            }
-          ></Route>
-          <Route exact path="/register" element={<Register />}></Route>
-          <Route exact path="/login" element={<Login />}></Route>
-          <Route
-            exact
-            path="/notes"
-            element={
-              <Notes
-                isMyTokenExpired={isMyTokenExpired}
-                token={token}
-                logOut={logOut}
-              />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Home isMyTokenExpired={isMyTokenExpired} logOut={logOut} />}
+        ></Route>
+        <Route exact path="/register" element={<Register />}></Route>
+        <Route exact path="/login" element={<Login />}></Route>
+        <Route
+          exact
+          path="/notes"
+          element={
+            <Notes
+              isMyTokenExpired={isMyTokenExpired}
+              token={token}
+              logOut={logOut}
+            />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

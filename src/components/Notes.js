@@ -7,8 +7,8 @@ function Notes(props) {
   const [notes, setNotes] = useState([]);
   const [username, setUsername] = useState([]);
   const [newNote, setNewNote] = useState({
-    title: "Title of your note",
-    content: "Write content of Your note here...",
+    title: "",
+    content: "",
   });
   const navigate = useNavigate();
 
@@ -71,8 +71,8 @@ function Notes(props) {
       .then((response) => {
         setNotes([response.data, ...notes]);
         setNewNote({
-          title: "Title of your note",
-          content: "Write content of Your note here...",
+          title: "",
+          content: "",
         });
       })
       .catch((error) => {
@@ -103,12 +103,14 @@ function Notes(props) {
             name="title"
             spellCheck="false"
             value={newNote.title}
+            placeholder="Title of your note"
             maxLength={37}
             onChange={(event) => handleNewNoteChange(event)}
           />
           <textarea
             name="content"
             spellCheck="false"
+            placeholder="Write content of Your note here..."
             value={newNote.content}
             onChange={(event) => handleNewNoteChange(event)}
           />
