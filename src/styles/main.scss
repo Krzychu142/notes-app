@@ -17,6 +17,21 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+textarea {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+    background-color: $gray;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+    border-radius: 10px;
+}
+
 ul {
     list-style: none;
     transform: translateX(-1em);
@@ -36,6 +51,7 @@ button {
     border-radius: 10px;
     transition-duration: 0.4s;
     cursor: pointer;
+    outline: none;
 }
 
 button:hover {

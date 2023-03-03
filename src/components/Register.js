@@ -51,8 +51,8 @@ const Register = () => {
             </Link>
           </li>
           <li>
-            Already have account?
-            <Link className="link login--nav--link ml" to="/login">
+            Already have account?{" "}
+            <Link className="link login--nav--link" to="/login">
               Go to login
             </Link>
           </li>
@@ -88,8 +88,8 @@ const Register = () => {
           <div>
             {responseCode === 200 ? (
               <p className="login__wrong">
-                Successfully registered. Now You can
-                <Link className="link login--nav--link ml" to="/login">
+                Successfully registered. Now You can{" "}
+                <Link className="link login--nav--link" to="/login">
                   log in
                 </Link>
                 .

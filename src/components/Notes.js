@@ -94,20 +94,24 @@ function Notes(props) {
         </nav>
       </header>
       <main>
-        <div>
-          <h3>create new note and save it</h3>
+        <div className="notes--new-note--form">
+          <div className="notes--new-note--form--header">
+            <h3>Create new note and save it in the cloud.</h3>
+            <p>Have your notes with you at all times.</p>
+          </div>
           <textarea
             name="title"
             value={newNote.title}
             onChange={(event) => handleNewNoteChange(event)}
-          ></textarea>
+          />
           <textarea
+            spellCheck="false"
             name="content"
             value={newNote.content}
             onChange={(event) => handleNewNoteChange(event)}
-          ></textarea>
+          />
+          <button onClick={handleSaveNewNote}>save new note</button>
         </div>
-        <button onClick={handleSaveNewNote}>save new note</button>
         {notes.map((note) => (
           <Note
             key={note.noteId}

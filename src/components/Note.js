@@ -52,7 +52,7 @@ function Note(props) {
           <textarea
             value={editedContent}
             onChange={(event) => setEditedContent(event.target.value)}
-          ></textarea>
+          />
           <button onClick={handleSaveChanges}>save changes</button>
         </div>
       )}

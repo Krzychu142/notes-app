@@ -46,8 +46,8 @@ const Login = () => {
             </Link>
           </li>
           <li>
-            Don't have account?
-            <Link className="link login--nav--link ml" to="/register">
+            Don't have account?{" "}
+            <Link className="link login--nav--link" to="/register">
               Go to register
             </Link>
           </li>
