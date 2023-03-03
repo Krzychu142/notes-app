@@ -9,10 +9,10 @@ The application allows registration and login. After registration, it sends a th
 
 ## Technologies used
 
-- [react ](react.png)<img src="react.png" height="40">
-- [sass ](sass.png)<img src="sass.png" height="40">
-- [express ](express.png)<img src="express.png" height="40">
-- [mongo DB ](mongo.png)<img src="mongo.png" height="40">
+- [react ](react.png)<img src="./images/react.png" height="40">
+- [sass ](sass.png)<img src="./images/sass.png" height="40">
+- [express ](express.png)<img src="./images/express.png" height="40">
+- [mongo DB ](mongo.png)<img src="./images/mongo.png" height="40">
 
 ## Features
 
@@ -24,8 +24,8 @@ The application allows registration and login. After registration, it sends a th
 
 ## Sampels
 
-<img src="1.png" >
-<img src="2.png" >
-<img src="3.png" >
-<img src="4.png" >
-<img src="5.png" >
+<img src="./images/1.png" >
+<img src="./images/2.png" >
+<img src="./images/3.png" >
+<img src="./images/4.png" >
+<img src="./images/5.png" >
