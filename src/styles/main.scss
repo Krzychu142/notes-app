@@ -2,6 +2,7 @@
 @import './variables.scss';
 @import './login.scss';
 @import './notes.scss';
+@import './note.scss';
 
 * {
     box-sizing: border-box;
@@ -19,7 +20,6 @@ html {
 
 textarea {
     font-family: 'Poppins', sans-serif;
-    
 }
 
 textarea::-webkit-scrollbar {

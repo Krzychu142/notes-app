@@ -7,8 +7,8 @@ function Notes(props) {
   const [notes, setNotes] = useState([]);
   const [username, setUsername] = useState([]);
   const [newNote, setNewNote] = useState({
-    title: "title of your note",
-    content: "content of your note",
+    title: "Title of your note",
+    content: "Write content of Your note here...",
   });
   const navigate = useNavigate();
 
@@ -69,10 +69,10 @@ function Notes(props) {
         }
       )
       .then((response) => {
-        setNotes([...notes, response.data]);
+        setNotes([response.data, ...notes]);
         setNewNote({
-          title: "title of your note",
-          content: "content of your note",
+          title: "Title of your note",
+          content: "Write content of Your note here...",
         });
       })
       .catch((error) => {
@@ -102,6 +102,7 @@ function Notes(props) {
           <textarea
             name="title"
             value={newNote.title}
+            maxLength={37}
             onChange={(event) => handleNewNoteChange(event)}
           />
           <textarea
@@ -112,16 +113,18 @@ function Notes(props) {
           />
           <button onClick={handleSaveNewNote}>save new note</button>
         </div>
-        {notes.map((note) => (
-          <Note
-            key={note.noteId}
-            noteId={note.noteId}
-            title={note.title}
-            content={note.content}
-            setNotes={setNotes}
-            token={props.token}
-          />
-        ))}
+        <div className="single-notes--container">
+          {notes.map((note) => (
+            <Note
+              key={note.noteId}
+              noteId={note.noteId}
+              title={note.title}
+              content={note.content}
+              setNotes={setNotes}
+              token={props.token}
+            />
+          ))}
+        </div>
       </main>
     </div>
   );

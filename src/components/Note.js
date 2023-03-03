@@ -4,7 +4,8 @@ import React, { useState } from "react";
 function Note(props) {
   const [editedContent, setEditedContent] = useState(props.content);
   const [isEditFieldVisible, setIsEditFieldVisible] = useState(false);
-
+  const [isFullTextVisible, setIsFullTextVisible] = useState(false);
+  const maxTextLength = 100;
   const handleSaveChanges = () => {
     axios
       .patch(
@@ -24,6 +25,10 @@ function Note(props) {
       });
   };
 
+  const handleToggleText = () => {
+    setIsFullTextVisible((prev) => !prev);
+  };
+
   const handleDeleteNote = () => {
     axios
       .delete(`http://localhost:3001/notes/${props.noteId}`, {
@@ -40,13 +45,20 @@ function Note(props) {
   };
 
   return (
-    <article>
+    <article className="note--container">
       <h3>{props.title}</h3>
-      <p>{props.content}</p>
-      <button onClick={handleDeleteNote}>delete</button>
+      <p>
+        {isFullTextVisible
+          ? props.content
+          : `${props.content.slice(0, maxTextLength)}...`}
+      </p>
+      {props.content.length >= maxTextLength && (
+        <button onClick={handleToggleText}>show more</button>
+      )}
       <button onClick={() => setIsEditFieldVisible((prev) => !prev)}>
         edit
       </button>
+      <button onClick={handleDeleteNote}>delete</button>
       {isEditFieldVisible && (
         <div>
           <textarea
