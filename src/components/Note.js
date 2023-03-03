@@ -62,6 +62,7 @@ function Note(props) {
       {isEditFieldVisible && (
         <div>
           <textarea
+            spellCheck="false"
             value={editedContent}
             onChange={(event) => setEditedContent(event.target.value)}
           />

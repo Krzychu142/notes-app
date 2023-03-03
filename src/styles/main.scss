@@ -20,6 +20,11 @@ html {
 
 textarea {
     font-family: 'Poppins', sans-serif;
+    background-color: rgb(212, 212, 212);
+}
+
+textarea:focus {
+    background-color: rgb(226, 226, 226);
 }
 
 textarea::-webkit-scrollbar {

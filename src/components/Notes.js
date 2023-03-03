@@ -90,7 +90,7 @@ function Notes(props) {
           <Link className="link" to="/">
             Home
           </Link>
-          <button onClick={() => props.logOut()}>LogOut</button>
+          <button onClick={() => props.logOut()}>logout</button>
         </nav>
       </header>
       <main>
@@ -101,13 +101,14 @@ function Notes(props) {
           </div>
           <textarea
             name="title"
+            spellCheck="false"
             value={newNote.title}
             maxLength={37}
             onChange={(event) => handleNewNoteChange(event)}
           />
           <textarea
-            spellCheck="false"
             name="content"
+            spellCheck="false"
             value={newNote.content}
             onChange={(event) => handleNewNoteChange(event)}
           />

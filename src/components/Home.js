@@ -10,14 +10,16 @@ const Home = (props) => {
             Welcome in <span>notes app</span>!
           </h2>
           <ul>
-            <li>
-              <h4>
-                Are You new here?{" "}
-                <Link className="link" to="/register">
-                  Register here
-                </Link>
-              </h4>
-            </li>
+            {props.isMyTokenExpired && (
+              <li>
+                <h4>
+                  Are You new here?{" "}
+                  <Link className="link" to="/register">
+                    Register here
+                  </Link>
+                </h4>
+              </li>
+            )}
             {props.isMyTokenExpired && (
               <li>
                 <h4>

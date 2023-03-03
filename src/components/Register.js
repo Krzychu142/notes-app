@@ -101,7 +101,7 @@ const Register = () => {
             )}
           </div>
         )}
-        <button type="submit">Register</button>
+        <button type="submit">register</button>
       </form>
     </main>
   );
